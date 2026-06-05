@@ -1,0 +1,52 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+ASIM ALI/eda-webapp/backend/uploads/
+ASIM ALI/eda-webapp/backend/processed/
+*.csv
+*.zip
+*.rar
+*.ipynb_checkpoints/
+.vscode
+.qodo
+
+eda-webapp/backend/uploads/
+eda-webapp/backend/processed/
+*.csv
+*.pbix
+*.pdf
+*.doc
+*.docx
+node_modules/
+android/build/
+ios/build/
+dist/
+.expo/
+
+
+# ZIP files
+*.zip
+
+# RAR files
+*.rar
+
+# Colab notebooks backup zips
+Colab Notebooks*.zip
+
+
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+.DS_Store
