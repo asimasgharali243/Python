@@ -59,7 +59,11 @@ If you see a connection error, verify service endpoints and credentials without 
 
 ## Screenshots
 
-**Not captured yet.** Genuine screenshots will be added under `docs/screenshots/` only after launching the application. Each screenshot will include its screen name, purpose, relevant workflow, capture platform and verification status. Do not substitute generated mockups for runtime evidence.
+Automated Chromium screenshot capture has been configured in GitHub Actions. The images below appear **only after a successful build, browser launch, and screenshot commit**. They represent the frontend running in CI, not a verified end-to-end backend workflow.
+
+![Python desktop application screen captured from the running frontend](docs/screenshots/homepage-desktop.png)
+
+![Python mobile viewport of the running frontend](docs/screenshots/homepage-mobile.png)
 
 ## Security and maintenance notes
 
