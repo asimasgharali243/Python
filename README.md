@@ -1,4 +1,10 @@
-# Python — Data Science, Automation and EDA
+# Python Data Science & EDA Portfolio | Flask, Pandas, React
+
+Python experiments, notebooks and an exploratory data analysis web application built with Flask, pandas, NumPy, scikit-learn and React/Vite.
+
+**Explore this repository:** [Architecture](docs/ARCHITECTURE.md) · [Developer runbook](docs/RUNBOOK.md) · [Screenshot evidence guide](docs/SCREENSHOT_GUIDE.md) · [Audit](docs/PORTFOLIO_AUDIT.md)
+
+**Discoverability topics:** `python` · `data-science` · `exploratory-data-analysis` · `flask` · `pandas` · `numpy` · `machine-learning` · `react`. These are suggested GitHub repository topics, not a claim that the repository settings have been updated.
 
 > **Status:** Source-reviewed documentation draft. Runtime startup, end-to-end tests and screenshots have **not** been independently verified. Review PR before merging.
 
