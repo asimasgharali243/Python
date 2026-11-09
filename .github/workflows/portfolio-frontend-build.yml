@@ -4,7 +4,7 @@ on:
     branches: [docs/portfolio-professionalization-2026]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   frontend-build:
     runs-on: ubuntu-latest
@@ -23,3 +23,38 @@ jobs:
         run: npm ci
       - name: Build frontend
         run: npm run build
+      - name: Install Chromium
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Capture real frontend screenshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p ../../docs/screenshots
+          npm run preview -- --host 127.0.0.1 --port 4173 > /tmp/portfolio-vite.log 2>&1 &
+          ready=0
+          for i in $(seq 1 45); do
+            if curl -fsS http://127.0.0.1:4173/ > /dev/null; then ready=1; break; fi
+            sleep 2
+          done
+          if [ "$ready" != 1 ]; then cat /tmp/portfolio-vite.log; exit 1; fi
+          npx playwright screenshot --browser chromium --viewport-size "1440,900" --wait-for-timeout 2000 http://127.0.0.1:4173/ ../../docs/screenshots/homepage-desktop.png
+          npx playwright screenshot --browser chromium --viewport-size "390,844" --wait-for-timeout 2000 http://127.0.0.1:4173/ ../../docs/screenshots/homepage-mobile.png
+      - name: Commit screenshots to review branch
+        working-directory: .
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/screenshots/homepage-desktop.png docs/screenshots/homepage-mobile.png
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: capture real frontend screenshots [skip ci]"
+            git push origin HEAD:docs/portfolio-professionalization-2026
+          fi
+      - name: Upload screenshot evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-screenshots
+          path: docs/screenshots/*.png
+          if-no-files-found: error
