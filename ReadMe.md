@@ -37,3 +37,10 @@ Use an isolated development database and synthetic records. Keep credentials, de
 ## Ownership and contributions
 
 Existing author, template, asset and dependency attributions remain in place. Follow any existing license files; this documentation update does not grant a new license. For a change, describe the affected workflow, configuration and checks so it can be reviewed without guessing.
+
+
+## Application screenshot
+
+![EDA application upload screen](docs/images/python-eda-upload.jpg)
+
+Captured from this repository’s EDA web frontend running locally. The blank upload screen is genuine; no dataset analysis or backend processing is claimed.

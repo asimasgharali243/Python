@@ -16,3 +16,6 @@ This is a source/publication/documentation review. It is not a certification of 
 ## Configuration and sensitive data
 
 Keep credentials, signing identities, device sessions and operational records outside Git. Removing a committed credential from today's branch does not remove it from old commits; revoke/replace any previously committed live credential. Use local configuration or deployment secrets. Existing license and template/asset attributions remain unchanged.
+
+
+Additional visual check: Captured from this repository’s EDA web frontend running locally. The blank upload screen is genuine; no dataset analysis or backend processing is claimed.
